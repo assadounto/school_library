@@ -9,20 +9,12 @@ class Person
   end
 
   def is_of_age?
-    if @age >= 18
-      true
-    else
-      false
+    @age >= 18 ? true : false
     end
-  end
 
   def can_use_services?
-    if @parent_permission || is_of_age?
-      true
-    else
-      false
+     @parent_permission || is_of_age? ? true : false
     end
-  end
 end
 
 person = Person.new(2, 'rich')
