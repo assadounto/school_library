@@ -7,6 +7,7 @@ class Person < Nameable
     @age = age
     @id = Random.rand(1..100)
     @parent_permission = parent_permission
+    super()
   end
 
   def correct_name
@@ -26,7 +27,7 @@ person = Person.new(22, 'maximilianus')
 p person.correct_name
 puts person.of_age?
 p person.can_use_services?
-capitalizedPerson = CapitalizeDecorator.new(person)
-p capitalizedPerson.correct_name
-capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-p capitalizedTrimmedPerson.correct_name
+capitalizedperson = CapitalizeDecorator.new(person)
+p capitalizedperson.correct_name
+capitalizedtrimmedperson = TrimmerDecorator.new(capitalizedperson)
+p capitalizedtrimmedperson.correct_name
