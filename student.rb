@@ -2,10 +2,11 @@ require_relative 'person'
 
 class Student < Person
   attr_reader :classroom
+  attr_accessor :parent_permission
 
-  def initialize(classroom, age, name)
+  def initialize(age, name, parent_permission)
     super(age, name)
-    @classroom = classroom
+    @parent_permission = parent_permission
   end
 
   def play_hooky
@@ -17,7 +18,3 @@ class Student < Person
     classroom.add_student(self) unless classroom.students.include?(self)
   end
 end
-
-p student = Student.new('55', 2, 'rich')
-p student.play_hooky
-p student.can_use_services?
