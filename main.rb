@@ -49,3 +49,5 @@ end
 
 main = Main.new
 main.run
+
+# rubocop:enable Metrics/CyclomaticComplexity
