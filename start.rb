@@ -8,9 +8,9 @@ def start
   when 3
     @app.create_person
   when 4
-    @app.create_book
+    @app.start_book
   when 5
-    @app.create_rental
+    @app.start_rental
   when 6
     @app.list_rentals
   when 7
