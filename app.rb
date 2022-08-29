@@ -10,6 +10,11 @@ class App
     @rentals = []
   end
 
+  def take_input_label(label)
+    print "#{label}: "
+    gets.chomp
+  end
+
   def create_person
     puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]:'
     selection = gets.chomp.to_i
@@ -24,10 +29,8 @@ class App
   end
 
   def student
-    puts 'Age:'
-    age = gets.chomp.to_i
-    puts 'Name:'
-    name = gets.chomp
+    age = take_input_label('Age')
+    name = take_input_label('Name')
     puts 'Has parent permission? [Y/N]'
     parent_permission = gets.chomp.downcase
     case parent_permission
@@ -43,12 +46,9 @@ class App
   end
 
   def teacher
-    puts 'Age:'
-    age = gets.chomp.to_i
-    puts 'Name:'
-    name = gets.chomp
-    puts 'Specialization:'
-    specialization = gets.chomp
+    age = take_input_label('Age')
+    name = take_input_label('Name')
+    specialization = take_input_label('specialization')
     @people << Teacher.new(age, name, specialization)
     puts 'Person created successfully'
   end
@@ -61,9 +61,8 @@ class App
 
   def create_book
     puts 'Please enter the title of the book:'
-    title = gets.chomp
-    puts 'Please enter the author of the book:'
-    author = gets.chomp
+    title = take_input_label('Title')
+    author = take_input_label('Author')
     @books << Book.new(title, author)
   end
 
