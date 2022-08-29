@@ -1,7 +1,5 @@
-# rubocop:disable Metrics/CyclomaticComplexity
-
 require_relative 'app'
-
+require_relative 'start'
 class Main
   def initialize
     @app = App.new
@@ -19,35 +17,11 @@ class Main
                 5 - Create a rental
                 6 - List all rentals for a given person id
                 7 - Exit
-              ")
+      #         ")
       start
-    end
-  end
-
-  def start
-    @reply = gets.chomp.to_i
-    case @reply
-    when 1
-      @app.list_books
-    when 2
-      @app.list_people
-    when 3
-      @app.create_person
-    when 4
-      @app.create_book
-    when 5
-      @app.create_rental
-    when 6
-      @app.list_rentals
-    when 7
-      puts 'Thank you for using this app!'
-    else
-      puts 'That is not a valid option.'
     end
   end
 end
 
 main = Main.new
 main.run
-
-# rubocop:enable Metrics/CyclomaticComplexity
