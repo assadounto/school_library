@@ -1,83 +1,9 @@
-<<<<<<< HEAD
 [
   {
     "type" : "student",
-    "id" : 2,
+    "id" : 19,
     "age" : 45,
-    "name" : "vgh",
-    "parent_permission" : true
-  },
-  {
-    "type" : "student",
-    "id" : 2,
-    "age" : 45,
-    "name" : "trtd",
-    "parent_permission" : true
-  },
-  {
-    "type" : "student",
-    "id" : 33,
-    "age" : 34,
-    "name" : "rr",
-    "parent_permission" : true
-  },
-  {
-    "specialization" : "45",
-    "type" : "teacher",
-    "id" : 25,
-    "age" : "ty",
-    "name" : "math"
-  },
-  {
-    "specialization" : "54",
-    "type" : "teacher",
-    "id" : 85,
-    "age" : "Go",
-    "name" : "out"
-  },
-  {
-    "specialization" : "5",
-    "type" : "teacher",
-    "id" : 54,
-    "age" : "he",
-    "name" : "is"
-  }
-=======
-[
-  {
-    "type" : "student",
-    "id" : 71,
-    "age" : 45,
-    "name" : "vgh",
-    "parent_permission" : true
-  },
-  {
-    "type" : "student",
-    "id" : 44,
-    "age" : 45,
-    "name" : "trtd",
-    "parent_permission" : true
-  },
-  {
-    "type" : "student",
-    "id" : 28,
-    "age" : 34,
-    "name" : "rr",
-    "parent_permission" : true
-  },
-  {
-    "specialization" : "ty",
-    "type" : "teacher",
-    "id" : 14,
-    "age" : "math",
-    "name" : "45"
-  },
-  {
-    "type" : "student",
-    "id" : 87,
-    "age" : 45,
-    "name" : "bright",
+    "name" : "ghh",
     "parent_permission" : true
   }
->>>>>>> 7d5976f9bb0021a61c33393e63aa7cd62924dd42
 ]

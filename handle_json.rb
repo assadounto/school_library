@@ -36,18 +36,6 @@ module HandlerFile
     file = File.read("people.json")
     mydata = JSON.parse(file)
     mydata.each do |person|
-      if person["type"] == "teacher"
-        @people.push(
-          Teacher.new(person["specialization"], person["age"], person["name"])
-        )
-      else
-        @people.push(
-          Student.new(
-            person["age"],
-            person["name"],
-            person["parent_permission"]
-          )
-        )
       if person['type']=='teacher'
         teacher=Teacher.new(person['age'],person['name'],person['specialization'])
         teacher.id=person['id']
@@ -95,19 +83,19 @@ module HandlerFile
         date = rental['date']
         person = filter_people(rental['personId'])
         book = filter_books(rental['book_title'])
-        @rentals.push(Rental.new(date, book, person))
+        @rentals.push(Rental.new(date, book[0], person[0]))
       end
   end
 
   def filter_people(personId)
      @people.filter do |person|
-        person if person.id == personId
+       return person if person.id == personId
      end
   end
 
   def filter_books(title)
     @books.each do |book|
-      book if book.title == title
+     return book if book.title == title
     end
   end
 
