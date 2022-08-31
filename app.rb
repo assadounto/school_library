@@ -4,6 +4,9 @@ require_relative "book"
 require_relative "rental"
 require_relative "module"
 require_relative "handle_json"
+require_relative "IO/handle_people"
+require_relative "IO/handle_books"
+require_relative "IO/handle_rentals"
 
 class App
   def initialize
@@ -12,10 +15,13 @@ class App
     @rentals = []
     load_people
     load_books
-    load_rentals
+    # load_rentals
   end
   include OtherFunctions
   include HandlerFile
+  include HandlePeople
+  include HandleBook
+  include HandleRentals
 
   def create_person
     selection =
