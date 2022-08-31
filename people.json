@@ -1,4 +1,30 @@
-{
-    "name": "test",
-    "age": 12
-}
+[
+  {
+    "type" : "student",
+    "id" : 99,
+    "age" : 11,
+    "name" : "qwqw",
+    "parent_permission" : true
+  },
+  {
+    "type" : "student",
+    "id" : 85,
+    "age" : 33,
+    "name" : "rdddd",
+    "parent_permission" : true
+  },
+  {
+    "specialization" : "33",
+    "type" : "teacher",
+    "id" : 96,
+    "age" : "www",
+    "name" : "rrr"
+  },
+  {
+    "type" : "student",
+    "id" : 31,
+    "age" : 44,
+    "name" : "eaa",
+    "parent_permission" : true
+  }
+]
