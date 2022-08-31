@@ -1,8 +1,7 @@
-require "json"
-require_relative "../person"
+require 'json'
+require_relative '../person'
 
 module HandlePeople
-
   def store_people
     json = []
     @people.map do |person|
