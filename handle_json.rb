@@ -36,9 +36,13 @@ module HandlerFile
    mydata=JSON.parse(file)
     mydata.each do |person|
       if person['type']=='teacher'
-        @people.push(Teacher.new(person['specialization'],person['age'],person['name']))
+        teacher=Teacher.new(person['age'],person['name'],person['specialization'])
+        teacher.id=person['id']
+        @people.push(teacher)
       else
-        @people.push(Student.new(person['age'],person['name'],person['parent_permission']))
+        student=Student.new(person['age'],person['name'],person['parent_permission'])
+        student.id=person['id']
+        @people.push(student)
       end
     end
   end
