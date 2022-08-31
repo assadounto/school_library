@@ -17,7 +17,7 @@ class Main
                 5 - Create a rental
                 6 - List all rentals for a given person id
                 7 - Exit
-      #         ")
+              ")
       start
     end
   end

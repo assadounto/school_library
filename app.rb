@@ -3,16 +3,31 @@ require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
 require_relative 'module'
+require_relative 'handle_json'
+require_relative 'IO/handle_people'
+require_relative 'IO/handle_books'
+require_relative 'IO/handle_rentals'
 
 class App
   def initialize
     @people = []
     @books = []
     @rentals = []
+    load_people
+    load_books
+    load_rentals
   end
   include OtherFunctions
+  include HandlerFile
+  include HandlePeople
+  include HandleBook
+  include HandleRentals
+
   def create_person
-    selection = take_input_label('Do you want to create a student (1) or a teacher (2)? [Input the number]')
+    selection =
+      take_input_label(
+        'Do you want to create a student (1) or a teacher (2)? [Input the number]'
+      )
     selection = selection.to_i
     case selection
     when 1
@@ -26,8 +41,9 @@ class App
 
   def student
     age = take_input_label('Age')
+    age = age.to_i
     name = take_input_label('Name')
-    parent_permission = parent_permission()
+    parent_permission = parent_permission
     create_student(age, name, parent_permission)
   end
 
