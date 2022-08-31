@@ -5,5 +5,12 @@
     "age" : 45,
     "name" : "ghh",
     "parent_permission" : true
+  },
+  {
+    "type" : "student",
+    "id" : 92,
+    "age" : 500,
+    "name" : "Ridwan",
+    "parent_permission" : null
   }
 ]
