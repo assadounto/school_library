@@ -7,9 +7,10 @@ require_relative "handle_json"
 
 class App
   def initialize
-    @people = []
+    @people =[]
     @books = []
     @rentals = []
+    load_people
   end
   include OtherFunctions
   include HandlerFile
@@ -32,8 +33,9 @@ class App
 
   def student
     age = take_input_label("Age")
+    age= age.to_i
     name = take_input_label("Name")
-    parent_permission = parent_permission
+    parent_permission = parent_permission()
     create_student(age, name, parent_permission)
   end
 
