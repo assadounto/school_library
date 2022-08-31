@@ -21,10 +21,17 @@
     "parent_permission" : true
   },
   {
-    "specialization" : "45",
+    "specialization" : "ty",
     "type" : "teacher",
     "id" : 14,
-    "age" : "ty",
-    "name" : "math"
+    "age" : "math",
+    "name" : "45"
+  },
+  {
+    "type" : "student",
+    "id" : 87,
+    "age" : 45,
+    "name" : "bright",
+    "parent_permission" : true
   }
 ]
