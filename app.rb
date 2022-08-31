@@ -11,6 +11,8 @@ class App
     @books = []
     @rentals = []
     load_people
+    load_books
+    load_rentals
   end
   include OtherFunctions
   include HandlerFile
