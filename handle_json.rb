@@ -48,6 +48,14 @@ module HandlerFile
             person["parent_permission"]
           )
         )
+      if person['type']=='teacher'
+        teacher=Teacher.new(person['age'],person['name'],person['specialization'])
+        teacher.id=person['id']
+        @people.push(teacher)
+      else
+        student=Student.new(person['age'],person['name'],person['parent_permission'])
+        student.id=person['id']
+        @people.push(student)
       end
     end
   end
