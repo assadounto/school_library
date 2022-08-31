@@ -4,26 +4,54 @@ require_relative "person"
 require_relative "rental"
 
 module HandlerFile
-  def people_to_json
-    person_data = []
-    # teacher{
-        teacher:person
-    }
-    @people.each { |person| if person_data << person}
-    File.open("people.json", "a") do |person|
-      puts person.write(JSON.generate(person_data))
+  def store_people
+    json=[]
+    @people.map do |person|
+      if person.instance_of?(Student)
+        json.push({
+          type:'student',
+          id:person.id,
+          age:person.age,
+          name:person.name,
+          parent_permission:person.parent_permission
+        }
+      )
+        else
+          json.push(
+            {
+              specialization: person.specialization,
+              type:'teacher',
+              id:person.id,
+              age:person.age,
+              name:person.name,
+            }
+          )
+          end
+    end
+       write_json(json, 'people.json')
+  end
+
+ def load_people
+   file = File.read('people.json')
+   mydata=JSON.parse(file)
+    mydata.each do |person|
+      if person['type']=='teacher'
+        @people.push(Teacher.new(person['specialization'],person['age'],person['name']))
+      else
+        @people.push(Student.new(person['age'],person['name'],person['parent_permission']))
+      end
     end
   end
 
-
-
-  def rentals_to_json
+  def write_json(array,filename)
+    opts = {
+      array_nl: "\n",
+      object_nl: "\n",
+      indent: '  ',
+      space_before: ' ',
+      space: ' '
+    }
+    File.open(filename, 'w') { |f|
+      f.write(JSON.generate(array, opts))}
   end
 end
-
- def load_books
-   puts file = File.read("test.txt")
-
-  end
-
-  load_books()
