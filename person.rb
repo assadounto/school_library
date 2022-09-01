@@ -28,3 +28,6 @@ class Person < Nameable
     Rental.new(@date, book, self)
   end
 end
+
+rich = Person.new(30, 'Rich')
+p rich.correct_name
